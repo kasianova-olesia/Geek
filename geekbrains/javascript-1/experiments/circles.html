@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Alexander Shatalov">
+	<title>Alexander Shatalov > JavaScript 1 > Circles (11/06/2017)</title>
+</head>
+<body style="background-color: #ffffff; overflow: hidden;">
+	<p style="font-size: 14px; color: silver;">Для остановки скрипта нажмите клавишу "ESC"</p>
+</body>
+<script>
+	var times = 0,
+		diameter = 0,
+		transition = false,
+		colors = ['red', 'blue', 'green', 'orange', 'aqua', 'violet', 'black', 'gray']; // Палитра цветов
+
+	function createCircle() {
+
+		function circleDraw(width, height, transition, top, left) {
+			if (!isNaN(left)) { circle.style.left = left + 'px'; }
+			circle.style.top = top + 'px';
+			circle.style.width = width + 'px';
+			circle.style.height = height + 'px';
+			circle.style.transition = transition + 's';
+		}
+
+		function circleColor() {
+			var r = Math.floor(Math.random()*255), // Цвет RGB
+				g = Math.floor(Math.random()*255), // Цвет RGB
+				b = Math.floor(Math.random()*255); // Цвет RGB
+			circle.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+		}
+
+		var diameter = Math.floor(Math.random()*110) + 10, // Диаметр круга
+			windowHeight = window.innerHeight, // Высота области просмотра окна
+			windowWidth = window.innerWidth; // Ширина области просмотра окна
+
+		if (transition) {
+			// анимация увеличения круга
+			var circle = document.getElementById('circle' + times);
+			circle.style.width = diameter + 'px';
+			circle.style.height = circle.style.width;
+			transition = false;
+			// количество повторов до начала анимации полёта круга
+			if (times++ > 30) {
+				circle = document.getElementById('circle' + (times - 32));
+				circleDraw(0, 0, 2, 0, NaN);
+			}
+			if (times > 1000) {
+				clearInterval(numInterval); // Остановка после 1000 циклов
+			}
+		} else {
+			var circle = document.createElement('div'),
+				x = Math.floor(Math.random()*(windowWidth-diameter*2))+diameter,
+				y = Math.floor(Math.random()*(windowHeight-diameter*2))+diameter;
+			circle.id = 'circle' + times;
+			circle.style.position = 'absolute';
+			circle.style.borderRadius = Math.floor(Math.random()*40) + 10 + '%';
+			circleColor();
+			circleDraw(1, 1, .7, y, x);
+			document.body.appendChild(circle);
+			transition = true;
+		}
+
+	}
+
+	// Цикличный запуск функции createCircle через 50мс (1000 миллисекунд равны 1 секунде)
+	numInterval = setInterval(createCircle, 50)
+
+	// Ожидание нажатия клавиши ESC
+	var body = document.querySelector('body');
+	body.onkeydown = function (e) {
+	    if(e.keyCode == 27) {
+			console.log (e);
+			clearInterval(numInterval);
+		}
+	};
+
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Alexander Shatalov">
+    <link rel="stylesheet" href="../style.css">
+	<title>Alexander Shatalov > JavaScript 1 > Lesson 2 > Extra Task 5 - "Gitty Kitty"</title>
+</head>
+<body>
+
+	<script>
+		function startScript() {
+			var answer = false,
+			cats = '',
+			countCats = 0,
+			pictureCat = '<img src="ex-2_5_cat.png" alt="Gitty Kitty">';
+
+			question (answer);
+
+			function question (answer) {
+				answer = confirm('Ты счастлив?\n("OK" - Да, "Отмена" - Нет)');
+				switch (answer) {
+					case (false):
+						document.getElementById('textTask').style.display = "none"; // Скрываю текст задачи
+						cats+=pictureCat; // Увеличиваю количество картинок с кошками на странице
+						document.getElementById('pasteCats').innerHTML = cats; // Добавляю кошек на страницу
+						countCats++; // Считаю количество кошек
+						alert ('Заведи больше кошек!');
+						question (answer); // Рекурсия
+						break;
+					case (true):
+						alert ('Ура! Вы счастливы!\n' + 'Для счастья потребовалось всего '+ countCats + ' кошки(ек)!');
+						document.getElementById('textTask').style.display = "block"; // Отображаю текст задачи
+				}
+			}
+		}
+	</script>
+
+	<div id="textTask">
+		<h2>Дополнительное домашнее задание №2</h2>
+
+		<hr>
+		<h3>5. "Задача про кошек"</h3>
+		<p>Написать данную программу без циклов. Написать минусы при данном подходе.</p>
+			<img src="ex-2_5_algorithm.jpg" alt="Схема алгоритма" />
+		<p>
+			<i>Ответ: Минусы при данном подходе в более сложной структуре кода, понимании его.</i>
+		</p>
+		<p>
+			<a href="javascript:void(0);" onclick="startScript();">Запустить выполнение задачи</a>
+		</p>
+	</div>
+
+	<div id="pasteCats">
+	</div>
+
+</body>
+</html>
