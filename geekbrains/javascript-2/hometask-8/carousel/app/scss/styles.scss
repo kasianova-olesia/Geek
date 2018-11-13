@@ -1,0 +1,348 @@
+// ------- Подключаем шрифты
+@import "_fonts.scss";
+
+// ------- Подключаем стили библиотек
+@import "_libs.scss";
+
+// ------- Подключаем переменные
+@import "_vars.scss";
+
+// ------- Подключаем миксины
+@import "_mixins.scss";
+
+// ------- Подключаем спрайты
+@import "_sprite.scss";
+
+// ------- Проект
+
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	counter-reset: numbers;
+}
+
+.wrapper {
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 0;
+	height: 100%;
+	max-width: 1170px;
+	min-width: 1170px;
+	//background-color: #EDEDED;
+}
+
+.carousel {
+	opacity: 0;
+	margin: 0 auto;
+	width: auto;
+	box-sizing: border-box;
+	border: solid 1px #007DC7;
+
+	&__content {
+		background-color: #EDEDED;
+		border-bottom: solid 1px #007DC7;
+	}
+
+	// <Товары>
+	&__products {
+		display: block;
+		float: left;
+		width: 90%;
+		overflow: hidden;
+
+		&-string {
+			position: relative;
+			//transition: all ease 0.75s;
+			left: 0px;
+			width: 10000px;
+		}
+
+		&-container {
+			float: left;
+			width: 208.5px;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+
+		&-items:hover {
+			box-sizing: border-box;
+			border: 1px solid #007DC7;
+		}
+
+		&-items {
+			box-sizing: border-box;
+			border: 1px solid #EDEDED;
+
+			&-images {
+				width: 100%;
+				height: 250px;
+				background: url(../img/no-photo.png) 100% 100% no-repeat;
+				background-position: center;
+				background-size: cover;
+				background-color: #E6E9EC;
+				text-align: center;
+			}
+
+			&-titles {
+				text-align: center;
+				background-color: #DAE3EA;
+				font-weight: 400;
+				font-size: 18px;
+				//padding: 0 10px;
+				//box-sizing: border-box;
+			}
+
+			&-descriptions {
+				text-align: center;
+				background-color: #E6E9EC;
+				//padding: 0 10px;
+				//box-sizing: border-box;
+			}
+
+			&-prices {
+				text-align: center;
+				background-color: #DAE3EA;
+				//padding: 0 10px;
+				//box-sizing: border-box;
+			}
+
+			&-basket {
+				text-align: center;
+				background-color: #007DC7;
+				color: white;
+				cursor: pointer;
+				//padding: 0 10px;
+				//box-sizing: border-box;
+			}
+		}
+	}
+	// </Товары>
+
+	// <Кругляшки>
+	&__dots {
+		background-color: #DAE3EA;
+		display: table;
+		width: 100%;
+		height: 30px;
+
+		&-items {
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+
+			&-links {
+
+				padding: 0px 2px;
+				cursor: pointer;
+
+				&-rounds {
+					display: inline-block;
+					width: 10px;
+					height: 10px;
+					background-color: white;
+					border: solid 2px #007DC7;
+					border-radius: 50%;
+					margin-top: 4px;
+
+					&_active {
+						//background-color: white;
+						//border: solid 2px white;
+						background-color: #007DC7;
+					}
+				}
+			}
+		}
+	}
+	// </Кругляшки>
+
+	// <Стрелки>
+	&__nav {
+		float: left;
+		width: 5%;
+		height: 353px;
+		display: table;
+
+		&-container {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		&-arrows {
+			margin: 0 auto;
+			display: table;
+			width: 35px;
+			height: 35px;
+			background-color: #007DC7;
+			border: 2px solid white;
+			border-radius: 50%;
+
+			&-links {
+				font-size: 20px;
+				display: table-cell;
+				font-weight: 400;
+				text-align: center;
+				vertical-align: middle;
+				cursor: pointer;
+				color: white;
+				&_right {
+				}
+				&_left {
+				}
+			}
+		}
+	}
+	// </Стрелки>
+}
+
+// <Корзина>
+// <Таблица товаров>
+
+.basket {
+	border: solid 1px white;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 10px auto 20px auto;
+
+	&__button {
+		margin: 10px auto 10px auto;
+		text-align: center;
+		width: 180px;
+		cursor: pointer;
+		background-color: #007DC7;
+		font-size: 20px;
+		color: white;
+		border: 1px solid white;
+		padding: 2px 10px;
+	}
+
+	&__symbol {
+		margin-top: 10px;
+		font-weight: 400;
+		font-size: 20px;
+		color: #007DC7;;
+		text-align: center;
+	}
+
+	&__table {
+		box-sizing: border-box;
+		width: 100%;
+		display: table;
+		background-color: #EDEDED;
+		border: 1px solid #007DC7;
+		border-collapse: collapse;
+
+		&-row {
+			display: table-row;
+			border: 1px solid #007DC7;
+
+			&_header {
+				background-color: #007DC7;
+				color: white;
+			}
+
+			&_products {
+				&:nth-child(odd) {
+					background-color: #DAE3EA;
+				}
+			}
+
+			&_sum {
+				background-color: #007DC7;
+				color: white;
+			}
+		}
+
+		&-cell {
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+			border: 1px solid #007DC7;
+			padding: 0px 10px;
+
+			.basket__table-row_products &_numbers:before {
+				counter-increment: numbers;
+				content: counter(numbers);
+			}
+
+			&_numbers {
+				width: 7.5%;
+			}
+
+			&_titles {
+				width: 15%;
+			}
+
+			&_photos {
+				width: 10%;
+				text-align: center;
+			}
+
+			.basket__table-row_products &_photos {
+				height: 90px;
+				background: url(../img/no-photo.png) 100% 100% no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
+
+			&_descriptions {
+				width: 25%;
+			}
+
+			&_prices {
+				width: 11.25%;
+			}
+
+			&_amount {
+				width: 7.5%;
+				text-align: center;
+				&-input {
+					width: 100%;
+				}
+			}
+
+			&_count {
+				width: 11.25%;
+			}
+
+			&_del {
+				width: 12.5%;
+				text-align: center;
+				&-button {
+					cursor: pointer;
+					background-color: #007DC7;
+					color: white;
+					border: 1px solid white;
+					padding: 2px 10px;
+				}
+			}
+
+			&_total {
+				font-weight: 400;
+				text-align: right;
+			}
+
+		}
+	}
+}
+
+// </Таблица товаров>
+// </Корзина>
+
+// ------- Общие стили
+@import "_common_styles.scss";
+
+// ------- Стили шапки
+@import "modules/_header.scss";
+
+// ------- Стили меню
+@import "modules/_menu.scss";
+
+// ------- Стили главной страницы
+@import "page/_index.scss";
+
+// ------- Стили футера
+@import "modules/_footer.scss";
+
+// ------- Стили медиазапросов
+@import "_media.scss";
