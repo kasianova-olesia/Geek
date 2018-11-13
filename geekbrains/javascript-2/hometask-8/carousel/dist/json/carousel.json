@@ -1,0 +1,129 @@
+{
+  "effects": "all ease 0.25s",
+  "widthCarousel": 1170,
+  "heightCarousel": 385,
+  "productsSlide": 5,
+  "currency": "$",
+  "products": [
+    {
+      "image": "./img/smartphone_001.png",
+      "title": "СмартФон 1",
+      "description": "8Gb",
+      "price": 10
+    },
+    {
+      "image": "./img/smartphone_002.png",
+      "title": "СмартФон 2",
+      "description": "16Gb",
+      "price": 20
+    },
+    {
+      "image": "./img/smartphone_003.png",
+      "title": "СмартФон 3",
+      "description": "24Gb",
+      "price": 30
+    },
+    {
+      "image": "./img/smartphone_004.png",
+      "title": "СмартФон 4",
+      "description": "32Gb",
+      "price": 40
+    },
+    {
+      "image": "./img/smartphone_005.png",
+      "title": "СмартФон 5",
+      "description": "64Gb",
+      "price": 50
+    },
+    {
+      "image": "./img/smartphone_001.png",
+      "title": "СмартФон 6",
+      "description": "8Gb",
+      "price": 10
+    },
+    {
+      "image": "./img/smartphone_002.png",
+      "title": "СмартФон 7",
+      "description": "16Gb",
+      "price": 20
+    },
+    {
+      "image": "./img/smartphone_003.png",
+      "title": "СмартФон 8",
+      "description": "24Gb",
+      "price": 30
+    },
+    {
+      "image": "./img/smartphone_004.png",
+      "title": "СмартФон 9",
+      "description": "32Gb",
+      "price": 40
+    },
+    {
+      "image": "./img/smartphone_005.png",
+      "title": "СмартФон 10",
+      "description": "64Gb",
+      "price": 50
+    },
+    {
+      "image": "./img/smartphone_001.png",
+      "title": "СмартФон 11",
+      "description": "128Gb",
+      "price": 10
+    },
+    {
+      "image": "./img/smartphone_002.png",
+      "title": "СмартФон 12",
+      "description": "128Gb",
+      "price": 20
+    },
+    {
+      "image": "./img/smartphone_003.png",
+      "title": "СмартФон 13",
+      "description": "128Gb",
+      "price": 30
+    },
+    {
+      "image": "./img/smartphone_004.png",
+      "title": "СмартФон 14",
+      "description": "128Gb",
+      "price": 40
+    },
+    {
+      "image": "./img/smartphone_005.png",
+      "title": "СмартФон 15",
+      "description": "128Gb",
+      "price": 50
+    },
+    {
+      "image": "./img/smartphone_001.png",
+      "title": "СмартФон 16",
+      "description": "256Gb",
+      "price": 10
+    },
+    {
+      "image": "./img/smartphone_002.png",
+      "title": "СмартФон 17",
+      "description": "256Gb",
+      "price": 20
+    },
+    {
+      "image": "./img/smartphone_003.png",
+      "title": "СмартФон 18",
+      "description": "256Gb",
+      "price": 30
+    },
+    {
+      "image": "./img/smartphone_004.png",
+      "title": "СмартФон 19",
+      "description": "256Gb",
+      "price": 40
+    },
+    {
+      "image": "./img/no-photo.png",
+      "title": "СмартФон 20",
+      "description": "256Gb",
+      "price": 50
+    }
+  ]
+}
