@@ -1,0 +1,51 @@
+body {
+	font-family: Lato, Calibri, Arial, sans-serif;
+}
+
+.wrapper {
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.menu a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.menu ul li {
+	width: 100px;
+	padding: 10px;
+	list-style-type: none;
+}
+
+.menu ul > li:hover,
+.menu ul ul > li:hover {
+	background-color: black;
+}
+
+.menu ul li, .menu ul {
+	display: inline-block;
+}
+
+.menu ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background-color: #007DC7;;
+	font-weight: bold;
+}
+
+.menu ul ul {
+	display: none;
+	position: absolute;
+	background-color: #34aac7;
+	margin-top: 10px;
+	margin-left: -10px;
+	font-weight: normal;
+}
+
+.menu li:hover ul,
+.menu li:hover li {
+	display: block;
+}
